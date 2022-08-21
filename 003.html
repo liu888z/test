@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="test">hello world test</h1>
+    <!-- 
+        인라인 JS
+        외부 JS
+        내부 JS
+    -->
+    <script>
+        // 변수선언
+        // var, let, const
+        // 실무에서는 const를 많이 사용하고
+        // let은 필요한 경우에 사용하시면 됩니다.
+        // var는 권하지 않습니다.
+
+        // error
+        // const 파이 = 3.14
+        // 파이 = 100
+
+        let x = 10
+        x = 100
+
+        // 산술연산
+        // +, -, /, *, %, **
+        console.log(10 % 3)
+
+        // 논리연산
+        // &&, ||, !
+        // true : 1
+        // false: 0
+        // and는 곱
+        // or는 합
+        console.log(true && false)
+
+        for (let i = 0; i < 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                console.log(i)
+            }
+        }
+
+        console.log('-----------')
+
+        for (let i = 0; i < 100; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                console.log(i)
+            }
+        }
+
+        // 비교연산
+        // >, >=, <, <=, ==(타입 확인 X), !=, ===(타입 확인)
+        if (1 == '1') {
+            console.log('one : 같아?')
+        }
+
+        if (1 === '1') {
+            console.log('two : 같아?')
+        }
+
+        // 반복문
+        let i = 0
+        while (i < 10) {
+            console.log(i)
+            i++
+        }
+
+        console.log('-----------')
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i)
+        }
+
+        console.log('-----------')
+
+        for (const key in ['hello', 'world']) {
+            console.log(key) // hello와 world의 index를 출력
+        }
+
+        for (const key in { '1': 'hello', '2': 'world' }) {
+            console.log(key) // hello와 world의 index를 출력
+        }
+
+        for (const key in { 'one': '하나', 'two': '둘' }) {
+            console.log(key) // hello와 world의 index를 출력
+        }
+
+        console.log('-----------')
+
+        for (const iterator of ['hello', 'world']) {
+            console.log(iterator)
+        }
+
+        for (const iterator of 'hello world') {
+            console.log(iterator)
+        }
+        // 순회가 가능하다? 이터러블 하다?
+        // enumerable: true이어야 하며
+        // next()로 다음 값을 호출할 수 있어야 합니다.
+        // 이것을 확인할 수 있는 메서드
+
+        // 조건문
+        if (true) {
+            if (false) {
+                console.log('one')
+            }
+            console.log('two')
+        }
+
+        if (10 > 3) {
+            console.log('hello')
+        }
+
+        // 함수
+        // 1. 아키텍처를 파악하기가 용이
+        // 2. 코드의 재사용성을 높이고 가독성을 높임
+        // 땅파기() // 10만줄
+        // 땅파기() // 10만줄 또 작성하는 것이 아니라
+        // 땅다지기() // 10만줄
+        // 벽돌쌓기() // 10만줄
+        // 지붕올리기() // 10만줄
+
+        // 파선아실
+        // 함수 선언
+        function one(x, y) { // 선언할 때 파라미터
+            console.log(100)
+            return x + y
+        }
+
+        // 함수 실행
+        console.log(one(10, 20)) // 실행할 때 아규먼트
+
+
+        // DOM
+        // 생성
+        let body = document.body
+        let 제목 = document.createElement('h1')
+        제목.setAttribute('class', 'one')
+        제목.textContent = 'hello world'
+        body.appendChild(제목)
+
+        let 내용 = document.createElement('p')
+        내용.setAttribute('class', 'two')
+        내용.textContent = 'lorem'
+        body.appendChild(내용)
+
+        // 기존 요소 컨트롤
+        let test = document.querySelector('.test')
+        test.innerHTML = '안녕?'
+
+    </script>
+</body>
+
+</html>
